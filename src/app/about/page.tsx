@@ -13,9 +13,9 @@ export default function AboutPage() {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length)
     }, 3000)
-
+  
     return () => clearInterval(interval)
-  }, [])
+  }, [images])
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold">Our History</h2>
               <p>
                 Vara Salon Suites started with a mission to redefine how beauty professionals build their careers.
-                Over the years, we've grown into a trusted name that champions independence and innovation.
+                Over the years, we&apos;ve grown into a trusted name that champions independence and innovation.
               </p>
             </div>
             <div className="lg:w-1/2">
