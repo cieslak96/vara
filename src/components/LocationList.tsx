@@ -30,11 +30,11 @@ export default function LocationList({ locations }: Props) {
         <span className="inline-flex items-center justify-center text-center flex-wrap gap-x-1">
           <span>St. George /</span>
           <span>Washington</span>
-          <span className="text-green-900">›</span>
+          <span className="text-[#1e1e1e]">›</span>
         </span>
       ) : (
         <>
-          {loc.city} <span className="text-green-900">›</span>
+          {loc.city} <span className="text-[#1e1e1e]">›</span>
         </>
       )
     }

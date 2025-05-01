@@ -1,46 +1,64 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
+
 
 export default function Footer() {
     return (
-      <footer className="bg-black text-white py-12 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
-          {/* Logo & Contact */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold">Vara Salon Suites</h2>
-            <p>(435) 915-6306</p>
-            <p>contact@varasuites.com</p>
-            <p>© 2024 by Loris Ventures LLC.</p>
-          </div>
-  
-          {/* Sections */}
-          <div className="space-y-2">
-            <h3 className="font-bold text-white mb-2">Explore</h3>
+      <footer className="bg-[#1c2b25] text-white py-4 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+    
+        {/* Logo + Contact: span 2 cols */}
+        <div className="md:col-span-2 flex items-center space-x-4">
+  <Link href="/" className="shrink-0">
+    <Image
+      src="/no-bg-logo.png"
+      alt="Vara Salon Suites"
+      width={100}
+      height={20}
+      priority
+    />
+  </Link>
+  <div className="space-y-1 text-sm">
+    <p>(435) 915-6306</p>
+    <p>contact@varasuites.com</p>
+
+  </div>
+</div>
+
+    
+        {/* Grouped navigation: 3 columns, tighter */}
+        <div className="md:col-span-3 flex gap-8 justify-end">
+    
+          {/* Explore */}
+          <div className="space-y-1">
+            <h3 className="font-bold">Explore</h3>
             <ul className="space-y-1">
               <li><Link href="/" className="hover:underline">Home</Link></li>
-              <li><Link href="/locations" className="hover:underline">Locations</Link></li>
+              <li><Link href="/about" className="hover:underline">About</Link></li>
               <li><Link href="/gallery" className="hover:underline">Gallery</Link></li>
               <li><Link href="/contact" className="hover:underline">Contact</Link></li>
               <li><Link href="/faq" className="hover:underline">FAQ</Link></li>
             </ul>
           </div>
-  
+    
           {/* Legal */}
-          <div className="space-y-2">
-            <h3 className="font-bold text-white mb-2">Legal</h3>
+          <div className="space-y-1">
+            <h3 className="font-bold">Legal</h3>
             <ul className="space-y-1">
               <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
               <li><Link href="/content" className="hover:underline">Content Policy</Link></li>
             </ul>
           </div>
-  
-          {/* Social & Careers */}
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-bold text-white mb-2">Join Us</h3>
-              <Link href="/careers" className="hover:underline block">Work With Us</Link>
-            </div>
-            <div className="flex space-x-2 mt-4">
+    
+          {/* Join Us */}
+          <div className="space-y-1">
+            <h3 className="font-bold">Join Us</h3>
+            <Link href="/careers" className="hover:underline block">Work With Us</Link>
+            <div className="flex space-x-2 pt-2">
+              {/* [Insert social SVG icons here...] */}
+              <div className="flex space-x-2 ">
               <Link href="https://www.instagram.com/vara_salon_suites/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-75">
                 <svg className="w-7 h-7 fill-white " viewBox="-2 -2 24 24">
                 <path d="M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z"></path><path d="M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z"></path>
@@ -57,10 +75,19 @@ export default function Footer() {
                 </svg>
               </Link>
             </div>
-            
+            </div>
           </div>
+          
+    
         </div>
-      </footer>
+        
+      </div><div className=" mt-8 text-sm text-white flex justify-end">
+  <p>© 2024 by Loris Ventures LLC. </p>
+</div>
+    </footer>
+    
+
+
     )
   }
   

@@ -63,7 +63,12 @@ export default function Home() {
         <HeroVideo />
 
         <section className="px-6 py-12">
-          <h2 className="text-3xl font-bold text-center mb-6">Our Locations</h2>
+          {/* Title */}
+        <div className="text-center mb-12 text-[#1e1e1e]">
+          <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
+          <h1 className="text-4xl font-bold text-[#1e1e1e]">Our Locations</h1>
+          <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
+        </div>
 
           <SearchBar value={search} onChange={setSearch} />
 
