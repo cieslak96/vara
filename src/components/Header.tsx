@@ -17,8 +17,8 @@ export default function Header() {
           />
         </Link>
         <nav className="space-x-6 text-sm">
+        <Link href="/amenities" className="hover:underline">Amenities</Link>
           <Link href="/about" className="hover:underline">About</Link>
-          <Link href="/portfolio" className="hover:underline">Portfolio</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
         </nav>
       </div>

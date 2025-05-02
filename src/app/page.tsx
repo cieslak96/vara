@@ -7,6 +7,7 @@ import SearchBar from '@/components/SearchBar'
 import LocationList from '@/components/LocationList'
 import HeroVideo from '@/components/HeroVideo'
 import Footer from '@/components/Footer'
+import Title from '@/components/Title'
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false })
 
@@ -63,12 +64,7 @@ export default function Home() {
         <HeroVideo />
 
         <section className="px-6 py-12">
-          {/* Title */}
-        <div className="text-center mb-12 text-[#1e1e1e]">
-          <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#1e1e1e]">Our Locations</h1>
-          <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
-        </div>
+        <Title title="Our Locations" />
 
           <SearchBar value={search} onChange={setSearch} />
 

@@ -4,7 +4,7 @@ import { Playfair_Display } from 'next/font/google'
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-playfair',
+  variable: '--font-playfair', // still define the variable for later use
 })
 
 export const metadata = {
@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={playfair.variable}>
-      <body className="bg-white text-black font-serif">{children}</body>
+    <html lang="en">
+      <body className="bg-white text-black">{children}</body>
     </html>
   )
 }

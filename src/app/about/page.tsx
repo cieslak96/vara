@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Title from '@/components/Title'
 
 export default function AboutPage() {
   const images = ['/team1.jpeg', '/team2.jpeg', '/team3.jpeg']
@@ -21,12 +22,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="pt-32">
-        {/* Title */}
-        <div className="text-center mb-12 text-[#1e1e1e]">
-          <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#1e1e1e]">About Us</h1>
-          <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
-        </div>
+      <Title title="About Us" />
 
         {/* Section 1 – Our Values */}
         <section className="bg-[#f9f9f6] text-[#1e1e1e] px-6 py-16">

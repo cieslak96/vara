@@ -34,9 +34,8 @@ export default function Footer() {
           <div className="space-y-1">
             <h3 className="font-bold">Explore</h3>
             <ul className="space-y-1">
-              <li><Link href="/" className="hover:underline">Home</Link></li>
+            <Link href="/amenities" className="hover:underline">Amenities</Link>
               <li><Link href="/about" className="hover:underline">About</Link></li>
-              <li><Link href="/gallery" className="hover:underline">Gallery</Link></li>
               <li><Link href="/contact" className="hover:underline">Contact</Link></li>
               <li><Link href="/faq" className="hover:underline">FAQ</Link></li>
             </ul>
