@@ -8,8 +8,8 @@ export default function Footer() {
       <footer className="bg-[#1c2b25] text-white py-4 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
     
-        {/* Logo + Contact: span 2 cols */}
-        <div className="md:col-span-2 flex items-center space-x-4">
+ {/* Logo + Contact (Always on same line) */}
+<div className="md:col-span-2 flex flex-row items-center justify-center md:justify-start gap-x-4 text-sm text-center md:text-left">
   <Link href="/" className="shrink-0">
     <Image
       src="/no-bg-logo.png"
@@ -19,10 +19,9 @@ export default function Footer() {
       priority
     />
   </Link>
-  <div className="space-y-1 text-sm">
+  <div className="space-y-1">
     <p>(435) 915-6306</p>
     <p>contact@varasuites.com</p>
-
   </div>
 </div>
 
