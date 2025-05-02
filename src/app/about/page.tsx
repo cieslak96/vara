@@ -6,17 +6,18 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Title from '@/components/Title'
 
-export default function AboutPage() {
-  const images = ['/team1.jpeg', '/team2.jpeg', '/team3.jpeg']
-  const [index, setIndex] = useState(0)
+const images = ['/team1.jpeg', '/team2.jpeg', '/team3.jpeg'];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length)
-    }, 3000)
+export default function AboutPage() {
+
+    const [index, setIndex] = useState(0)
   
-    return () => clearInterval(interval)
-  }, [images])
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setIndex((prev) => (prev + 1) % images.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }, []);
 
   return (
     <>
@@ -97,4 +98,4 @@ export default function AboutPage() {
       <Footer />
     </>
   )
-}
+  }

@@ -12,15 +12,16 @@ const images = [
   '/amenity3.png'
 ]
 
+
 export default function AmenitiesPage() {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length)
+      setIndex((prev) => (prev + 1) % images.length);
     }, 3000)
     return () => clearInterval(interval)
-  }, [images])
+  }, [])
 
   return (
     <>
