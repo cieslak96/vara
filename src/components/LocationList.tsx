@@ -16,7 +16,12 @@ type Props = {
 
 export default function LocationList({ locations }: Props) {
   if (!locations.length) {
-    return <p className="text-center col-span-full text-gray-500">No matching locations found.</p>
+    return (
+      <p className="text-center col-span-full text-gray-500">
+        Vara is not in your city <span className="italic">(yet)</span>.<br />
+        Please type your zipcode so you can find our nearest location.
+      </p>
+    )
   }
 
   return (
