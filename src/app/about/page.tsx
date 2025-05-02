@@ -9,21 +9,20 @@ import Title from '@/components/Title'
 const images = ['/team1.jpeg', '/team2.jpeg', '/team3.jpeg'];
 
 export default function AboutPage() {
+  const [index, setIndex] = useState(0);
 
-    const [index, setIndex] = useState(0)
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % images.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       <Header />
       <main className="pt-32">
-      <Title title="About Us" />
+        <Title title="About Us" />
 
         {/* Section 1 – Our Values */}
         <section className="bg-[#f9f9f6] text-[#1e1e1e] px-6 py-16">
@@ -79,18 +78,19 @@ export default function AboutPage() {
                 and skilled maintenance personnel. Everyone plays a vital role in making Vara a place where beauty professionals thrive.
               </p>
             </div>
-            <div className="lg:w-1/2">
-              <div className="relative w-full h-64 rounded-lg overflow-hidden">
-                {images.map((src, i) => (
-                  <Image
-                    key={i}
-                    src={src}
-                    alt={`Team ${i + 1}`}
-                    fill
-                    className={`object-cover transition-opacity duration-700 ease-in-out ${i === index ? 'opacity-100' : 'opacity-0'}`}
-                  />
-                ))}
-              </div>
+
+            {/* Carousel container */}
+            <div className="relative w-full lg:w-1/2 min-h-[300px] h-[300px] overflow-hidden rounded-lg">
+              {images.map((src, i) => (
+                <Image
+                  key={i}
+                  src={src}
+                  alt={`Team member ${i + 1}`}
+                  fill
+                  className={`absolute inset-0 object-cover transition-opacity duration-700 ease-in-out ${i === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                  sizes="100vw"
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -98,4 +98,4 @@ export default function AboutPage() {
       <Footer />
     </>
   )
-  }
+}
