@@ -50,7 +50,7 @@ export default function FAQPage() {
 
                             <div>
                                 <h3 className="text-xl font-semibold">Can I decorate or remodel my suite?</h3>
-                                <p>Yes, we want your suite to reflect your brand and creativity. You're welcome to paint, decorate, and add furnishings as long as they comply with our safety standards.</p>
+                                <p>Yes, we want your suite to reflect your brand and creativity. You are welcome to paint, decorate, and add furnishings as long as they comply with our safety standards.</p>
                             </div>
 
                             <div>

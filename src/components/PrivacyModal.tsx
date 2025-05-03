@@ -30,7 +30,7 @@ export default function PrivacyModal() {
               <ul className="list-disc pl-5 space-y-1">
                 <li>We collect name, email, address, and phone via forms or third-party systems.</li>
                 <li>Data is used only for updates and reminders related to our services.</li>
-                <li>Your information is securely stored and retained while you're subscribed.</li>
+                <li>Your information is securely stored and retained while you are subscribed.</li>
                 <li>You may request deletion at any time.</li>
                 <li>MESSAGE AND DATA RATES MAY APPLY.</li>
                 <li>Messages are recurring and frequency may vary.</li>
