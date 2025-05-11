@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-32">
+      <main className="pt-18">
         <Title title="Contact Us" />
         <div className="flex flex-col lg:flex-row w-full min-h-screen">
           {/* Left Image */}

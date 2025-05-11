@@ -12,7 +12,7 @@ export default function Footer() {
 
         {/* Logo + Contact */}
         <div className="md:col-span-2 flex flex-row items-center justify-center md:justify-start gap-x-4 text-sm text-center md:text-left">
-          <Link href="/" className="shrink-0">
+          <Link href="/" className="hover:scale-105">
             <Image
               src="/no-bg-logo.png"
               alt="Vara Salon Suites"
@@ -33,16 +33,17 @@ export default function Footer() {
           {/* Explore */}
           <div className="space-y-1">
             <h3 className="font-bold">Explore</h3>
-            <ul className="space-y-1">
-              <Link href="/amenities" className="hover:underline">Amenities</Link>
-              <li><Link href="/about" className="hover:underline">About</Link></li>
-              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-              <li><Link href="/faq" className="hover:underline">FAQ</Link></li>
+            <ul className="space-y-1 min-w-[70px]">
+              <Link href="/amenities" className="hover:font-bold">Amenities</Link>
+              <li><Link href="/about" className="hover:font-bold">About</Link></li>
+              <li><Link href="/contact" className="hover:font-bold">Contact</Link></li>
+              <li><Link href="/faq" className="hover:font-bold">FAQ</Link></li>
+                        <li><Link href="/hero2" className="hover:font-bold">Alt Hero</Link></li>
             </ul>
           </div>
 
           {/* Legal */}
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-[110px]">
             <h3 className="font-bold">Legal</h3>
             <ul className="space-y-1">
               <li><PrivacyModal /></li>
@@ -54,7 +55,7 @@ export default function Footer() {
           {/* Join Us */}
           <div className="space-y-1">
             <h3 className="font-bold">Join Us</h3>
-            <Link href="/careers" className="hover:underline block">Work With Us</Link>
+            <Link href="/careers" className="hover:font-bold">Work With Us</Link>
             <div className="flex space-x-2 ">
               <SocialIcons />
             </div>

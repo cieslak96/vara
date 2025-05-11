@@ -9,7 +9,7 @@ export default function PrivacyModal() {
   return (
     <>
       {/* Trigger button */}
-      <button onClick={() => setShow(true)} className="hover:underline">
+      <button onClick={() => setShow(true)} className="hover:font-bold">
         Privacy Policy
       </button>
       {/* Modal content */}

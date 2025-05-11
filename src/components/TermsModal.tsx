@@ -7,7 +7,7 @@ export default function TermsModal() {
 
   return (
     <>
-      <button onClick={() => setShow(true)} className="hover:underline">
+      <button onClick={() => setShow(true)} className="hover:font-bold">
         Terms of Service
       </button>
       {show && (

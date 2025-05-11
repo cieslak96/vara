@@ -21,7 +21,7 @@ export default function AmenitiesPage() {
   return (
     <>
       <Header />
-      <main className="pt-32">
+      <main className="pt-18">
         <Title title="Our Amenities" />
 
         {/* Section 1 – Amenities */}
