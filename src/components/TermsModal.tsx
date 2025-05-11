@@ -16,9 +16,9 @@ export default function TermsModal() {
             {/* Header */}
             <div className="mb-5">
               <div className="flex flex-col items-center">
-                <hr className="border-t-2 border-green-900 w-2/3 sm:w-1/2 mb-2" />
+                <hr className="border-t-2 border-[#1e1e1e] w-2/3 sm:w-1/2 mb-2" />
                 <h1 className="text-xl font-semibold text-[#1e1e1e]">Terms of Service</h1>
-                <hr className="border-t-2 border-green-900 w-2/3 sm:w-1/2 mt-2" />
+                <hr className="border-t-2 border-[#1e1e1e] w-2/3 sm:w-1/2 mt-2" />
               </div>
             </div>
   
