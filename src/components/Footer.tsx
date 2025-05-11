@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="md:col-span-2 flex flex-row items-center justify-center md:justify-start gap-x-4 text-sm text-center md:text-left">
           <Link href="/" className="hover:scale-105">
             <Image
-              src="/no-bg-logo.png"
+              src="/logo-white.png"
               alt="Vara Salon Suites"
               width={100}
               height={20}

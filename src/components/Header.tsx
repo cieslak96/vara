@@ -9,7 +9,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-6 py-2 max-w-7xl mx-auto">
         <Link href="/" className="hover:scale-105">
           <Image
-            src="/logo.png" // Make sure logo is in public/logo.png
+            src="/logo-black.png" // Make sure logo is in public/logo.png
             alt="Vara Salon Suites"
             width={130}
             height={50}
