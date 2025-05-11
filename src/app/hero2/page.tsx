@@ -1,4 +1,4 @@
-// HomePage.tsx (Main Layout)
+// Cleaned up version
 'use client'
 import HeaderLand from '@/components/Header'
 import BentoCardLand from '@/components/BentoCardLand'
@@ -7,14 +7,6 @@ import { useEffect, useState } from 'react'
 
 export default function HomePage() {
   const [bgPos, setBgPos] = useState('left')
-  const [isSmall, setIsSmall] = useState(false)
-
-  useEffect(() => {
-    const checkScreen = () => setIsSmall(window.innerWidth < 640)
-    checkScreen()
-    window.addEventListener('resize', checkScreen)
-    return () => window.removeEventListener('resize', checkScreen)
-  }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => setBgPos('right'), 100)
@@ -31,10 +23,9 @@ export default function HomePage() {
           backgroundPosition: bgPos,
         }}
       />
-
       <HeaderLand />
       <BentoCardLand bgPos={bgPos} />
-      <SocialLand /> 
+      <SocialLand />
     </section>
   )
 }
