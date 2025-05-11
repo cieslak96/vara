@@ -16,12 +16,12 @@ export default function TermsModal() {
             {/* Header */}
             <div className="mb-5">
               <div className="flex flex-col items-center">
-                <hr className="border-t-2 border-[#1e1e1e] w-2/3 sm:w-1/2 mb-2" />
-                <h1 className="text-xl font-semibold text-[#1e1e1e]">Terms of Service</h1>
-                <hr className="border-t-2 border-[#1e1e1e] w-2/3 sm:w-1/2 mt-2" />
+                <hr className=" border-[#1c2b25] w-2/3 sm:w-1/2 mb-2" />
+                <h1 className="text-xl  text-[#1e1e1e]">Terms of Service</h1>
+                <hr className="border-[#1c2b25] w-2/3 sm:w-1/2 mt-2" />
               </div>
             </div>
-  
+
             {/* Text */}
             <div className="space-y-2 text-gray-700">
               <p>
@@ -34,7 +34,7 @@ export default function TermsModal() {
                 <li>All suite leases are governed by a separate rental agreement.</li>
               </ul>
             </div>
-  
+
             {/* Button */}
             <div className="flex justify-end mt-6">
               <button

@@ -30,14 +30,14 @@ export default function Title({ title }: TitleProps) {
       style={{ fontFamily: 'var(--font-cinzel)' }}
     >
       <div
-        className="h-[2px] bg-[#1e1e1e] mx-auto mb-4"
+        className="h-[2px] bg-[#1c2b25] mx-auto mb-4"
         style={{ width: `${borderWidth}px` }}
       />
       <h1 ref={titleRef} className="text-4xl  text-[#1e1e1e] inline-block">
         {title}
       </h1>
       <div
-        className="h-[2px] bg-[#1e1e1e] mx-auto mt-4"
+        className="h-[2px] bg-[#1c2b25] mx-auto mt-4"
         style={{ width: `${borderWidth}px` }}
       />
     </div>

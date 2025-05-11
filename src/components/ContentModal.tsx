@@ -15,9 +15,9 @@ export default function ContentModal() {
           <div className="bg-white max-w-xl w-full p-6 rounded-lg shadow-lg relative text-sm text-gray-700">
             <div className="mb-5">
               <div className="flex flex-col items-center">
-                <div className="h-[2px] bg-[#1e1e1e] w-2/3 sm:w-1/2 mb-2" />
-                <h1 className="text-xl font-semibold text-[#1e1e1e]">Content Policy</h1>
-                <div className="h-[2px] bg-[#1e1e1e] w-2/3 sm:w-1/2 mt-2" />
+             <hr className="border-[#1c2b25] w-2/3 sm:w-1/2 mb-2" />
+                <h1 className="text-xl  text-[#1e1e1e]">Content Policy</h1>
+                <hr className="border-[#1c2b25] w-2/3 sm:w-1/2 mt-2" />
               </div>
             </div>
 
