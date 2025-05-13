@@ -38,7 +38,8 @@ export default function Footer() {
               <li><Link href="/about" className="hover:font-bold">About</Link></li>
               <li><Link href="/contact" className="hover:font-bold">Contact</Link></li>
               <li><Link href="/faq" className="hover:font-bold">FAQ</Link></li>
-                        <li><Link href="/hero2" className="hover:font-bold">Alt Hero</Link></li>
+              <li><Link href="/hero2" className="hover:font-bold">Alt Hero</Link></li>
+                 <li><Link href="/hero3" className="hover:font-bold">Alt Hero2</Link></li>
             </ul>
           </div>
 

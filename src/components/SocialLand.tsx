@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 export default function SocialLand() {
   return (
-    <div className="fixed right-14 bottom-20 z-50 space-y-5">
+  <div className="fixed right-10 lg:right-25 bottom-15 lg:bottom-20 z-50 space-y-5">
+
     <div className="flex gap-x-2 ">
       <Link
         href="https://www.instagram.com/vara_salon_suites/"

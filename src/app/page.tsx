@@ -70,11 +70,11 @@ export default function Home() {
         <HeroVideo />
 
         <section className=" py-12">
-        <div className={`${cinzel.variable} text-center pt-20 pb-20 items-center justify-between`} style={{ fontFamily: 'var(--font-cinzel)' }}>
-      <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
-      <h1 className="text-4xl font-semi-bold text-[#1e1e1e]">Our Locations</h1>
-      <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
-    </div>
+          <div className={`${cinzel.variable} text-center pt-20 pb-20 items-center justify-between`} style={{ fontFamily: 'var(--font-cinzel)' }}>
+            <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
+            <h1 className="text-4xl font-semi-bold text-[#1e1e1e]">Our Locations</h1>
+            <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
+          </div>
 
           <SearchBar value={search} onChange={setSearch} />
 
