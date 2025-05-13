@@ -13,13 +13,13 @@ export default function Header() {
       {/* Backdrop Blur for Page — stays behind header */}
       {isOpen && (
         <div
-          className=" inset-0 backdrop-blur-sm z-20"
+          className=" fixed inset-0 backdrop-blur-sm z-20"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Header — stays on top of backdrop */}
-      <header className="fixed top-0 left-0 w-full z-30 bg-white/70 text-black">
+      <header className="absolute top-0 left-0 w-full z-30 bg-white/70 text-black">
         <div className="flex items-center justify-between px-6 py-2 max-w-7xl mx-auto">
           {/* Logo */}
           <Link href="/" className="hover:scale-105">
