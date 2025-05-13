@@ -13,7 +13,7 @@ export default function Header() {
       {/* Backdrop Blur for Page — stays behind header */}
       {isOpen && (
         <div
-          className="fixed inset-0 backdrop-blur-sm z-20"
+          className=" inset-0 backdrop-blur-sm z-20"
           onClick={() => setIsOpen(false)}
         />
       )}
