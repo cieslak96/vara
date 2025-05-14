@@ -36,7 +36,7 @@ export default function AboutPage() {
   />
 
   {/* Overlay Card */}
-  <div className="absolute top-2/3 left-1/3 lg:left-1/5 transform -translate-x-1/2 -translate-y-1/2 bg-[#f9f9f6] text-[#1e1e1e] px-6 py-6  shadow-lg max-w-sm w-[90%]">
+  <div className="absolute top-2/3 left-1/2 lg:left-1/5 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 lg:bg-[#f9f9f6] text-[#1e1e1e] px-6 py-6  shadow-lg max-w-sm w-[90%]">
     <h2 className="text-2xl font-bold mb-4">Our Values</h2>
     <p className="text-sm">
 We want to give professionals and their customers a great experience—one that feels warm, smooth, and thoughtful. We care about treating people with kindness and helping others grow.
