@@ -102,7 +102,7 @@ export default function AmenitiesPage() {
     </div>
 
     {/* MIDDLE CARD - CENTERED */}
-    <div className="lg:w-1/3 pl-20 flex ">
+    <div className="lg:w-1/3 lg:pl-20 flex ">
       <div className={`${blackstone.variable} bg-[#f9f9f6] w-60 h-48 flex flex-col items-center justify-center text-center p-6 shadow-md space-y-2`}>
         <p className="text-sm">
           No likes, subscription, or re-posting necessary.
