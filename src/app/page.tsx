@@ -1,6 +1,6 @@
-// src/app/page.tsx
 'use client'
-import { useState, useMemo } from 'react'
+
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import SearchBar from '@/components/SearchBar'
@@ -30,37 +30,84 @@ const locationData = [
   { city: 'Lehi', zip: '84043', lat: 40.3989316, lng: -111.8497829 },
   { city: 'Salt Lake', zip: '84102', lat: 40.7614577, lng: -111.8789574 },
   { city: 'Bountiful', zip: '84010', lat: 40.8864176, lng: -111.889143 },
-  { city: 'St. George / Washington', zip: '84780', lat: 37.1262176, lng: -113.5243339 },
+  { city: 'Saint George / Washington', zip: '84780', lat: 37.1262176, lng: -113.5243339 },
 ]
 
-function zipDistance(zip1: string, zip2: string): number {
-  return Math.abs(parseInt(zip1) - parseInt(zip2))
+// Geo distance function (Haversine formula)
+function geoDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const toRad = (value: number) => (value * Math.PI) / 180
+  const R = 6371
+  const dLat = toRad(lat2 - lat1)
+  const dLng = toRad(lng2 - lng1)
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLng / 2) ** 2
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  return R * c
 }
 
 export default function Home() {
   const [search, setSearch] = useState('')
+  const [filteredLocations, setFilteredLocations] = useState(locationData)
 
-  const filteredLocations = useMemo(() => {
-    if (!search) return locationData
-
-    const lower = search.toLowerCase()
-
-    const matchByCity = locationData.filter(({ city }) =>
-      city.toLowerCase().includes(lower)
-    )
-
-    const zipSearch = search.match(/^\d{5}$/)
-
-    if (zipSearch) {
-      const closest = locationData.reduce((prev, curr) => {
-        return zipDistance(curr.zip, search) < zipDistance(prev.zip, search)
-          ? curr
-          : prev
-      })
-      return [closest]
+  useEffect(() => {
+    if (!search) {
+      setFilteredLocations(locationData)
+      return
     }
 
-    return matchByCity
+    const lower = search.toLowerCase().trim()
+
+
+
+    const zipMatch = search.match(/^\d{5}$/)
+    if (zipMatch) {
+      const zip = search
+      const closest = locationData.reduce((prev, curr) => {
+        const prevDist = Math.abs(parseInt(prev.zip) - parseInt(zip))
+        const currDist = Math.abs(parseInt(curr.zip) - parseInt(zip))
+        return currDist < prevDist ? curr : prev
+      }, locationData[0])
+      setFilteredLocations([closest])
+      return
+    }
+
+    const cityMatches = locationData.filter(({ city }) =>
+      city.toLowerCase().includes(lower)
+    )
+    if (cityMatches.length > 0) {
+      setFilteredLocations(cityMatches)
+      return
+    }
+
+    // Geocode unlisted Utah cities
+    const fetchGeo = async () => {
+      try {
+        const res = await fetch(
+          `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(search + ', Utah')}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        )
+        const data = await res.json()
+
+        if (data.results && data.results.length > 0) {
+          const { lat, lng } = data.results[0].geometry.location
+          const closest = locationData.reduce((prev, curr) =>
+            geoDistance(lat, lng, curr.lat, curr.lng) <
+            geoDistance(lat, lng, prev.lat, prev.lng)
+              ? curr
+              : prev
+          )
+          setFilteredLocations([closest])
+        } else {
+          setFilteredLocations(locationData) // fallback to all
+        }
+      } catch (error) {
+        console.error('Geocoding failed:', error)
+        setFilteredLocations(locationData)
+      }
+    }
+
+    fetchGeo()
   }, [search])
 
   return (
@@ -69,10 +116,15 @@ export default function Home() {
       <main className="bg-white text-black">
         <HeroVideo />
 
-        <section className=" py-12">
-          <div className={`${cinzel.variable} text-center pt-20 pb-20 items-center justify-between`} style={{ fontFamily: 'var(--font-cinzel)' }}>
+        <section className="py-12">
+          <div
+            className={`${cinzel.variable} text-center pt-20 pb-20`}
+            style={{ fontFamily: 'var(--font-cinzel)' }}
+          >
             <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
-            <h1 className="text-4xl font-semi-bold text-[#1e1e1e]">Our Locations</h1>
+            <h1 className="text-4xl font-semi-bold text-[#1e1e1e]">
+              Our Locations
+            </h1>
             <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
           </div>
 
