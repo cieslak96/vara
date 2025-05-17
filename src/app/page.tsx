@@ -18,19 +18,19 @@ const cinzel = Cinzel({
 const Map = dynamic(() => import('@/components/Map'), { ssr: false })
 
 const locationData = [
-  { city: 'Sandy', zip: '84070', lat: 40.6049759, lng: -111.8715306 },
-  { city: 'Orem (Dwell)', zip: '84057', lat: 40.296759, lng: -111.7031896 },
-  { city: 'West Valley', zip: '84120', lat: 40.6962725, lng: -111.9838413 },
-  { city: 'Spanish Fork', zip: '84660', lat: 40.1176614, lng: -111.638252 },
-  { city: 'Ogden', zip: '84404', lat: 41.2378795, lng: -111.947232 },
-  { city: 'Tooele', zip: '84074', lat: 40.5315153, lng: -112.3005169 },
-  { city: 'Murray', zip: '84117', lat: 40.6664535, lng: -111.8688888 },
-  { city: 'Layton', zip: '84041', lat: 41.0913601, lng: -111.9755507 },
-  { city: 'Pleasant Grove', zip: '84062', lat: 40.368379, lng: -111.7692468 },
-  { city: 'Lehi', zip: '84043', lat: 40.3989316, lng: -111.8497829 },
-  { city: 'Salt Lake', zip: '84102', lat: 40.7614577, lng: -111.8789574 },
-  { city: 'Bountiful', zip: '84010', lat: 40.8864176, lng: -111.889143 },
-  { city: 'Saint George / Washington', zip: '84780', lat: 37.1262176, lng: -113.5243339 },
+  { name:'sandy', city: 'Sandy', zip: '84070', lat: 40.6049759, lng: -111.8715306 },
+  { name:'orem', city: 'Orem (Dwell)', zip: '84057', lat: 40.296759, lng: -111.7031896 },
+  { name:'wv', city: 'West Valley', zip: '84120', lat: 40.6962725, lng: -111.9838413 },
+  { name:'sf', city: 'Spanish Fork', zip: '84660', lat: 40.1176614, lng: -111.638252 },
+  { name:'ogden', city: 'Ogden', zip: '84404', lat: 41.2378795, lng: -111.947232 },
+  { name:'tooele', city: 'Tooele', zip: '84074', lat: 40.5315153, lng: -112.3005169 },
+  { name:'murray', city: 'Murray', zip: '84117', lat: 40.6664535, lng: -111.8688888 },
+  { name:'layton', city: 'Layton', zip: '84041', lat: 41.0913601, lng: -111.9755507 },
+  { name:'pg', city: 'Pleasant Grove', zip: '84062', lat: 40.368379, lng: -111.7692468 },
+  { name:'lehi', city: 'Lehi', zip: '84043', lat: 40.3989316, lng: -111.8497829 },
+  { name:'slc', city: 'Salt Lake', zip: '84102', lat: 40.7614577, lng: -111.8789574 },
+  { name:'bountiful', city: 'Bountiful', zip: '84010', lat: 40.8864176, lng: -111.889143 },
+  { name:'stg', city: 'Saint George / Washington', zip: '84780', lat: 37.1262176, lng: -113.5243339 },
 ]
 
 // Geo distance function (Haversine formula)

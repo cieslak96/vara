@@ -30,6 +30,7 @@ type Location = {
   lat: number
   lng: number
   city: string
+  name:string
 }
 
 export default function Map({ locations }: { locations: Location[] }) {
@@ -78,21 +79,27 @@ useEffect(() => {
       ))}
 
       {selected && (
-        <InfoWindow
-          position={{ lat: selected.lat, lng: selected.lng }}
-          onCloseClick={() => setSelected(null)}
-        >
-          <div
-            className="text-sm font-semibold cursor-pointer hover:underline"
-            onClick={() =>
-              window.location.href = `/locations/${encodeURIComponent(
-                selected.city.toLowerCase().replace(/\s+/g, '-')
-              )}`
-            }
-          >
-            {selected.city}
-          </div>
-        </InfoWindow>
+      <InfoWindow
+  position={{ lat: selected.lat, lng: selected.lng }}
+  onCloseClick={() => setSelected(null)}
+>
+  <div
+    className="text-sm cursor-pointer"
+    onClick={() =>
+      window.location.href = `/locations/${encodeURIComponent(
+        selected.city.toLowerCase().replace(/\s+/g, '-')
+      )}`
+    }
+  >
+    <img
+      src={`locations/${selected.name.toLowerCase().replace(/\s+/g, '-')}/${selected.name.toLowerCase().replace(/\s+/g, '-')}-facade.png`}
+      alt={`${selected.city} facade`}
+      className="w-32 h-auto rounded mb-2"
+    />
+    <p className="font-semibold hover:underline">{selected.city}</p>
+  </div>
+</InfoWindow>
+
       )}
     </GoogleMap>
   )

@@ -4,6 +4,7 @@
 import LocationCard from './LocationCard'
 
 type Location = {
+
   city: string
   zip: string
   lat: number

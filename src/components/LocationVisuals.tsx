@@ -32,78 +32,73 @@ export default function LaytonSection() {
   }
 
   return (
-    <section className="flex flex-col gap-4">
-      {/* Top: Facade */}
-      <div className="w-full">
+    <section className="flex flex-col h-screen gap-y-4">
+      {/* Row 1: Facade */}
+      <div className="flex-1 relative w-full">
         <Image
-          src="/layton/laytonfacade.png"
+          src="/layton/layton-facade.png"
           alt="Layton Facade"
-          width={1200}
-          height={600}
-          className="w-full h-auto object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 
-      {/* Bottom: Gallery + Video */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Gallery */}
-        <div
-          className="relative aspect-square overflow-hidden group cursor-pointer"
-          onClick={() => setIsFullscreen(true)}
+      {/* Row 2: Gallery */}
+      <div
+        className="flex-1 relative w-full cursor-pointer overflow-hidden"
+        onClick={() => setIsFullscreen(true)}
+      >
+        <Image
+          src={galleryImages[currentIndex]}
+          alt={`Gallery image ${currentIndex + 1}`}
+          fill
+          className="object-cover"
+        />
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            prev()
+          }}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
         >
-          <Image
-            src={galleryImages[currentIndex]}
-            alt={`Gallery image ${currentIndex + 1}`}
-            fill
-            className="object-cover"
-          />
-
-          {/* Arrows inside image */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              prev()
-            }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              next()
-            }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Video */}
-        <div
-          className="aspect-square overflow-hidden cursor-pointer"
-          onClick={() => setIsVideoFullscreen(true)}
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            next()
+          }}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
         >
-          <video
-            src="/layton/layton-video.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </div>
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Row 3: Video */}
+      <div
+        className="flex-1 relative w-full cursor-pointer overflow-hidden"
+        onClick={() => setIsVideoFullscreen(true)}
+      >
+        <video
+          src="/layton/layton-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Fullscreen Modal - Gallery */}
       {isFullscreen && (
         <div className="fixed inset-0 bg-[#f9f9f6] bg-opacity-90 flex items-center justify-center z-50">
           <button
-            className="absolute top-4 right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+            className="absolute top-4 right-4 z-50 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
             onClick={() => setIsFullscreen(false)}
           >
             <X className="w-6 h-6" />
           </button>
+
 
           <div className="relative max-w-[90vw] max-h-[90vh] bg-white w-full h-full flex items-center justify-center">
             <button
@@ -135,11 +130,12 @@ export default function LaytonSection() {
       {isVideoFullscreen && (
         <div className="fixed inset-0 bg-[#f9f9f6] bg-opacity-90 flex items-center justify-center z-50">
           <button
-            className="absolute top-4 right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
-            onClick={() => setIsVideoFullscreen(false)}
+            className="absolute top-4 right-4 z-50 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+         onClick={() => setIsVideoFullscreen(false)}
           >
             <X className="w-6 h-6" />
           </button>
+
 
           <div className="relative w-[90vw] h-[90vh] bg-black rounded-lg overflow-hidden">
             <video

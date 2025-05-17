@@ -10,35 +10,25 @@ export default function TwoColumnPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen flex pt-18">
-        {/* Left Column - 1/4 width */}
-        <div className="w-1/4 bg-gray-100 p-6 flex flex-col">
-          {/* Top section (3/4 height) */}
-          <div className="flex-grow-[3]">
+      <div className="flex-grow pt-18">
+        <Title title="Layton" />
+      </div>
 
-           <LocationsVisuals />
-          </div>
-
-          {/* Bottom section (1/4 height) */}
-          <div className="flex-grow">
-            <h2 className="text-lg font-bold mb-2">Bottom Left Section</h2>
-            <p>This section takes 25% of the left column height.</p>
-          </div>
+      {/* Responsive layout */}
+      <main className="min-h-screen flex flex-col md:flex-row">
+        
+        {/* Left Column - goes below on small, left on md+ */}
+        <div className="w-full md:w-1/4 bg-gray-100 p-6 flex flex-col">
+          <LocationsVisuals />
         </div>
 
-        {/* Right Column - 3/4 width */}
-        <div className="w-3/4 bg-white  flex flex-col">
-          {/* Top section: Title only */}
-          <div className="flex-grow">
-            <Title title="Layton" />
-          </div>
-
-          {/* Bottom section: 3x height of Title */}
-          <div className="flex-grow-[3] space-y-4 ">
-    
+        {/* Right Column */}
+        <div className="w-full md:w-3/4 bg-white flex flex-col">
+          <div className="flex-grow space-y-4 p-10">
             <FloorPlan />
           </div>
         </div>
+
       </main>
       <Footer />
     </>
