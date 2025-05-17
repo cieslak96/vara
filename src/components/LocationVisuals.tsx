@@ -5,13 +5,13 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 const galleryImages = [
-  '/layton/layton1.png',
-  '/layton/layton2.png',
-  '/layton/layton3.png',
-  '/layton/layton4.png',
-  '/layton/layton5.png',
-  '/layton/layton6.png',
-  '/layton/layton7.png',
+  '/locations/layton/layton1.png',
+  '/locations/layton/layton2.png',
+  '/locations/layton/layton3.png',
+  '/locations/layton/layton4.png',
+  '/locations/layton/layton5.png',
+  '/locations/layton/layton6.png',
+  '/locations/layton/layton7.png',
 ]
 
 export default function LaytonSection() {
@@ -36,7 +36,7 @@ export default function LaytonSection() {
       {/* Row 1: Facade */}
       <div className="flex-1 relative w-full">
         <Image
-          src="/layton/layton-facade.png"
+          src="/locations/layton/layton-facade.png"
           alt="Layton Facade"
           fill
           className="object-cover"
@@ -80,7 +80,7 @@ export default function LaytonSection() {
         onClick={() => setIsVideoFullscreen(true)}
       >
         <video
-          src="/layton/layton-video.mp4"
+          src="/locations/layton/layton-video.mp4"
           autoPlay
           muted
           loop
@@ -139,7 +139,7 @@ export default function LaytonSection() {
 
           <div className="relative w-[90vw] h-[90vh] bg-black rounded-lg overflow-hidden">
             <video
-              src="/layton/layton-video.mp4"
+              src="/locations/layton/layton-video.mp4"
               controls
               autoPlay
               className="w-full h-full object-contain"

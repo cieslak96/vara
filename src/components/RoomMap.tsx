@@ -12,7 +12,7 @@ export default function RoomMap({ filter }: Props) {
   return (
     <div className="relative">
       <Image
-        src="/layton/layton-fp.png"
+        src="/locations/layton/layton-fp.png"
         alt="Floor Plan"
         width={1000}
         height={600}
@@ -61,7 +61,7 @@ export default function RoomMap({ filter }: Props) {
                 </div>
               ) : (
                 <Image
-                  src={`/layton/rooms/room${room.id}.png`}
+                  src={`/locations/layton/rooms/room${room.id}.png`}
                   alt={`Icon for ${room.id}`}
                   width={35}
                   height={35}
