@@ -1,3 +1,6 @@
+'use client'
+
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -6,14 +9,10 @@ import { rooms } from '@/components/locations/layton/Rooms'
 import RoomVideo from '@/components/RoomVideo'
 import RoomGallery from '@/components/RoomGallery'
 
-interface Props {
-  params: {
-    id: string
-  }
-}
-
-export default function RoomDetailPage({ params }: Props) {
-  const room = rooms.find((r) => r.id === params.id)
+export default function RoomDetailPage() {
+  const params = useParams()
+  const roomId = params?.id as string
+  const room = rooms.find((r) => r.id === roomId)
 
   if (!room) {
     return <div className="p-10 text-red-500">Room not found</div>
@@ -26,10 +25,10 @@ export default function RoomDetailPage({ params }: Props) {
         <Title title={`Suite ${room.id}`} />
       </div>
 
-      {/* Layout principal - responsive */}
-      <div className="flex flex-col lg:flex-row h-auto lg:h-[calc(115vh-6rem)]">
+      {/* Responsive Layout */}
+      <div className="flex flex-col lg:flex-row h-auto lg:h-[calc(120vh-6rem)]">
 
-        {/* Coluna 1: Vídeo com card sobreposto */}
+        {/* Video Section */}
         <div className="relative w-full lg:w-2/3 h-[50vh] lg:h-full">
           <RoomVideo roomId={room.id} />
           <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 bg-white/80 p-6 shadow-lg space-y-4 text-[#1e1e1e] w-[90%] sm:w-[320px] max-w-[90%]">
@@ -57,9 +56,9 @@ export default function RoomDetailPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Coluna 2: Fachada + Galeria */}
+        {/* Facade + Gallery Section */}
         <div className="w-full lg:w-1/3 bg-stone-200 px-6 lg:px-20 py-10 flex flex-col gap-6">
-          {/* Fachada */}
+          {/* Facade */}
           <div className="relative rounded overflow-hidden w-full h-60 sm:h-72 lg:flex-[3] lg:h-auto">
             <img
               src={`/locations/layton/rooms/${room.id}/${room.id}.png`}
@@ -68,7 +67,7 @@ export default function RoomDetailPage({ params }: Props) {
             />
           </div>
 
-          {/* Galeria - set height on mobile to make it visible */}
+          {/* Gallery */}
           <div className="w-full h-48 sm:h-56 lg:flex-[2] lg:h-auto overflow-hidden">
             <RoomGallery roomId={room.id} />
           </div>
