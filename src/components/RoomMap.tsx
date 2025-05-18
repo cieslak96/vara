@@ -1,7 +1,7 @@
-// RoomMap.tsx
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { rooms } from '@/components/locations/layton/Rooms'
 
 interface Props {
@@ -25,21 +25,16 @@ export default function RoomMap({ filter }: Props) {
         const isAvailable = room.name.toLowerCase() === 'available'
 
         return (
-          <button
+          <Link
             key={room.id}
+            href={`/locations/layton/rooms/${room.id}`}
             className={`absolute flex flex-col items-center justify-center text-xs text-black hover:scale-125 hover:z-30 ${room.color}`}
-
             style={{
               top: room.top,
               left: room.left,
               width: room.width,
               height: room.height,
             }}
-            onClick={() =>
-              alert(
-                `Suite ${room.id}\n${room.name}\n${room.services}\n${room.phone}\n${room.email}`
-              )
-            }
             title={`Room ${room.id}`}
           >
             {!matchesFilter && <div className="absolute inset-0 bg-white/90 z-10" />}
@@ -61,7 +56,7 @@ export default function RoomMap({ filter }: Props) {
                 </div>
               ) : (
                 <Image
-                  src={`/locations/layton/rooms/room${room.id}.png`}
+                  src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
                   alt={`Icon for ${room.id}`}
                   width={35}
                   height={35}
@@ -74,9 +69,9 @@ export default function RoomMap({ filter }: Props) {
               <span className="text-gray-700 text-[11px] text-center">
                 {room.services}
               </span>
-              <span className="text-gray-700 text-[11px] text-center">{room.phone} </span>
+              <span className="text-gray-700 text-[11px] text-center">{room.phone}</span>
             </div>
-          </button>
+          </Link>
         )
       })}
     </div>

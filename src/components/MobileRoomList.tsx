@@ -1,7 +1,7 @@
-// MobileRoomList.tsx
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { rooms } from '@/components/locations/layton/Rooms'
 
 interface Props {
@@ -19,15 +19,10 @@ export default function MobileRoomList({ filter }: Props) {
           const isAvailable = room.name.toLowerCase() === 'available'
 
           return (
-            <button
+            <Link
+              href={`/locations/layton/rooms/${room.id}`}
               key={room.id}
-              onClick={() =>
-                alert(
-                  `Suite ${room.id}\n${room.name}\n${room.services}\n${room.phone}\n${room.email}`
-                )
-              }
               className={`w-full flex items-center gap-3 rounded-md px-4 py-3 ${room.color}`}
-           
             >
               {!isAvailable && (
                 <Image
@@ -43,9 +38,9 @@ export default function MobileRoomList({ filter }: Props) {
                   #{room.id} {room.name}
                 </span>
                 <span className="text-gray-700 text-[11px]">{room.services}</span>
-                 <span className="text-gray-700 text-[11px]">{room.phone} </span>
+                <span className="text-gray-700 text-[11px]">{room.phone}</span>
               </div>
-            </button>
+            </Link>
           )
         })}
     </div>
