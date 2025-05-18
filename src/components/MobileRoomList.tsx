@@ -26,7 +26,7 @@ export default function MobileRoomList({ filter }: Props) {
             >
               {!isAvailable && (
                 <Image
-                  src={`/locations/layton/rooms/room${room.id}.png`}
+                  src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
                   alt={`Icon for ${room.id}`}
                   width={36}
                   height={36}
