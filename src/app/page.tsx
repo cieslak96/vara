@@ -7,13 +7,9 @@ import SearchBar from '@/components/SearchBar'
 import LocationList from '@/components/LocationList'
 import HeroVideo from '@/components/HeroVideo'
 import Footer from '@/components/Footer'
-import { Cinzel } from 'next/font/google'
+import Title from '@/components/Title'
 
-const cinzel = Cinzel({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-cinzel',
-})
+
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false })
 
@@ -113,21 +109,12 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="bg-white text-black">
+      <main className="bg-white text-[#030707]">
         <HeroVideo />
 
-        <section className="py-12">
-          <div
-            className={`${cinzel.variable} text-center pt-20 pb-20`}
-            style={{ fontFamily: 'var(--font-cinzel)' }}
-          >
-            <div className="w-100 h-[2px] bg-green-900 mx-auto mb-4" />
-            <h1 className="text-4xl font-semi-bold text-[#1e1e1e]">
-              Our Locations
-            </h1>
-            <div className="w-100 h-[2px] bg-green-900 mx-auto mt-4" />
-          </div>
+        <Title title="Our Locations" />
 
+        <section className="py-12 px-4 lg:px-0">
           <SearchBar value={search} onChange={setSearch} />
 
           <div className="flex flex-col lg:flex-row gap-6 max-w-7xl mx-auto">

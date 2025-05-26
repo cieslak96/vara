@@ -12,7 +12,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
       <input
         type="text"
         placeholder="Enter city or zip code..."
-        className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+        className="w-full max-w-md px-4 py-2 border  border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-[#030707]"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

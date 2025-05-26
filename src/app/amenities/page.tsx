@@ -49,7 +49,7 @@ export default function AmenitiesPage() {
           ))}
 
           {/* Overlay card for large screens */}
-          <div className="hidden lg:block absolute top-5/8 left-1/10 transform -translate-y-1/2 bg-white/90 text-[#1e1e1e] px-6 py-6 shadow-lg max-w-sm w-[90%] space-y-4 z-20">
+          <div className="hidden lg:block absolute top-5/8 left-1/10 transform -translate-y-1/2 bg-white/90 text-black px-6 py-6 shadow-lg max-w-sm w-[90%] space-y-4 z-20">
 
             <p className="text-sm">
               We do all we can to help you have an amazing experience in your suite. At VARA, we emphasize customizing your space to fit your creative goals. We offer many different room sizes (from 90 to 400 sqft) to best fit your needs.
@@ -68,9 +68,9 @@ export default function AmenitiesPage() {
         </section>
 
         {/* Static card for small/medium devices */}
-        <section className="block lg:hidden px-6 py-10 bg-[#f9f9f6] text-[#1e1e1e] space-y-4">
+        <section className="block lg:hidden px-6 py-10 bg-[#f9f9f6] text-black space-y-4">
 
-          <p className="text-sm">
+          <p className = "text-base">
             We do all we can to help you have an amazing experience in your suite. At VARA, we emphasize customizing your space to fit your creative goals. We offer many different room sizes (from 90 to 400 sqft) to best fit your needs.
           </p>
           <p className="text-sm">Among our amenities you can find:</p>
@@ -91,7 +91,7 @@ export default function AmenitiesPage() {
   <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
     
     {/* LEFT COLUMN */}
-    <div className="lg:w-1/3 text-center space-y-4">
+    <div className="lg:w-1/3 text-left space-y-4">
       <h2 className="text-3xl font-bold">Monthly Giveaways</h2>
       <p>
         As always, we will be doing giveaways for VARA tenants the first Wednesday of every month. We will randomly be selecting several tenants each week from across all our locations.
@@ -103,12 +103,12 @@ export default function AmenitiesPage() {
 
     {/* MIDDLE CARD - CENTERED */}
     <div className="lg:w-1/3 lg:pl-20 flex ">
-      <div className={`${blackstone.variable} bg-[#f9f9f6] w-60 h-48 flex flex-col items-center justify-center text-center p-6 shadow-md space-y-2`}>
+      <div className={`${blackstone.variable} bg-neutral-50 w-60 h-48 flex flex-col items-center justify-center text-center p-6 shadow-md space-y-2`}>
         <p className="text-sm">
           No likes, subscription, or re-posting necessary.
         </p>
         <p
-          className="text-2xl text-[#1e1e1e] font-bold"
+          className="text-2xl text-black font-bold"
           style={{ fontFamily: 'var(--font-blackstone)' }}
         >
           Just be a Vara tenant!

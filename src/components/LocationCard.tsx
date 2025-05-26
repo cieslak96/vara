@@ -12,9 +12,9 @@ export default function LocationCard({ city, label }: Props) {
   return (
     <Link
       href={`/locations/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}`}
-      className="bg-[#f9f9f6] px-4 py-3 text-center rounded-md hover:bg-gray-200 transition cursor-pointer text-lg  leading-tight"
+      className="border border-black px-4 py-3 text-left text-black  rounded-md hover:bg-neutral-50 hover:scale-110 transition cursor-pointer text-lg  leading-tight"
     >
-      {label}
+      {label}    <span className="text-black">›</span>
     </Link>
   )
 }

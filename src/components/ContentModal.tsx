@@ -7,7 +7,7 @@ export default function ContentModal() {
 
   return (
     <>
-      <button onClick={() => setShow(true)} className="hover:font-bold">
+      <button onClick={() => setShow(true)} className="hover:font-bold text-xs">
         Content Policy
       </button>
       {show && (

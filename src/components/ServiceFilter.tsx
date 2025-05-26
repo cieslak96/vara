@@ -10,8 +10,8 @@ interface Props {
 
 export default function ServiceFilter({ filter, setFilter }: Props) {
   return (
-    <div className="flex flex-wrap justify-center gap-3 px-4 py-4">
-      <p className="w-full text-center text-sm font-semibold text-gray-700 mb-2 mt-4">
+    <div className="flex flex-wrap justify-center gap-3  py-4">
+      <p className="w-full text-center text-sm font-semibold text-gray-700 mb-2 mt-4 py-5">
         Looking for:
       </p>
       {services.map((service) => {

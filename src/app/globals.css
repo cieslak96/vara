@@ -1,25 +1,38 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
 
+/* Define light theme colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: white ;
+  --foreground: black;
+  --font-gilroy: 'Gilroy', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@font-face {
+  font-family: 'Blackstone';
+  src: url('../fonts/Blackstone.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-playfair: 'Playfair Display', serif;
+  --font-playfair: var(--font-playfair);
+  --font-gilroy: var(--font-gilroy);
 }
 
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: black;
+    --foreground: white ;
   }
 }
 
+/* Apply Gilroy globally */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-playfair);
+  font-family: var(--font-gilroy);
 }

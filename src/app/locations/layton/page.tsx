@@ -1,3 +1,4 @@
+
 'use client'
 
 import Header from '@/components/Header'
@@ -10,26 +11,32 @@ export default function TwoColumnPage() {
   return (
     <>
       <Header />
-      <div className="flex-grow pt-18">
+    
+      <main className="pt-18">
         <Title title="Layton" />
-      </div>
 
-      {/* Responsive layout */}
-      <main className="min-h-screen flex flex-col md:flex-row">
-        
-        {/* Left Column - goes below on small, left on md+ */}
-        <div className="w-full md:w-1/4 bg-gray-100 p-6 flex flex-col">
-          <LocationsVisuals />
-        </div>
+<div className="w-full flex flex-col lg:flex-row px-4 lg:px-0">
+  {/* Left Column (Visuals) */}
+  <div className="w-full lg:w-1/4 relative flex flex-col ">
+    <div className="relative w-full aspect-[3/4] lg:aspect-auto lg:flex-1">
+      <LocationsVisuals />
+    </div>
+  </div>
 
-        {/* Right Column */}
-        <div className="w-full md:w-3/4 bg-white flex flex-col">
-          <div className="flex-grow space-y-4 p-10">
-            <FloorPlan />
-          </div>
-        </div>
+  {/* Right Column (Floor Plan) */}
+  <div className="w-full lg:w-3/4 bg-white flex flex-col">
+    <div className="flex-grow space-y-10  py-10 ">
+      <FloorPlan />
+    </div>
+  </div>
+</div>
+
+
+
+
 
       </main>
+      
       <Footer />
     </>
   )

@@ -51,58 +51,56 @@ export default function RoomVisuals({ roomId }: Props) {
   }
 
   return (
-    <section className="flex h-full gap-4">
-   {/* Right: Gallery and Video with Equal Height */}
-<div className="flex flex-col gap-4 h-full w-full p-6">
-  {/* Gallery */}
-  <div
-    className="relative flex-1 cursor-pointer overflow-hidden rounded"
-    onClick={() => setIsFullscreen(true)}
-  >
-    {galleryImages.length > 0 && (
-      <Image
-        src={galleryImages[currentIndex]}
-        alt={`Gallery image ${currentIndex + 1}`}
-        fill
-        className="object-cover rounded"
-      />
-    )}
-    <button
-      onClick={(e) => {
-        e.stopPropagation()
-        prev()
-      }}
-      className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-    >
-      <ChevronLeft className="w-5 h-5" />
-    </button>
-    <button
-      onClick={(e) => {
-        e.stopPropagation()
-        next()
-      }}
-      className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-    >
-      <ChevronRight className="w-5 h-5" />
-    </button>
-  </div>
+    <section className="flex w-full gap-4">
+      <div className="flex flex-col gap-4 w-full p-6">
+        {/* Gallery */}
+        <div
+          className="relative w-full pt-[56.25%] cursor-pointer overflow-hidden rounded" // 16:9 aspect ratio
+          onClick={() => setIsFullscreen(true)}
+        >
+          {galleryImages.length > 0 && (
+            <Image
+              src={galleryImages[currentIndex]}
+              alt={`Gallery image ${currentIndex + 1}`}
+              fill
+              className="absolute top-0 left-0 w-full h-full object-cover rounded"
+            />
+          )}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              prev()
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              next()
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
 
-  {/* Video */}
-  <div
-    className="relative flex-1 bg-[#001F2F] flex items-center justify-center rounded cursor-pointer overflow-hidden"
-    onClick={() => setIsVideoFullscreen(true)}
-  >
-    <video
-      src={`/locations/layton/rooms/${roomId}/${roomId}.mp4`}
-      muted
-      autoPlay
-      loop
-      playsInline
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
+        {/* Video */}
+        <div
+          className="relative w-full pt-[56.25%] bg-[#001F2F] rounded overflow-hidden cursor-pointer"
+          onClick={() => setIsVideoFullscreen(true)}
+        >
+          <video
+            src={`/locations/layton/rooms/${roomId}/${roomId}.mp4`}
+            muted
+            autoPlay
+            loop
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
       {/* Fullscreen Gallery */}
       {isFullscreen && (
@@ -152,13 +150,19 @@ export default function RoomVisuals({ roomId }: Props) {
             <X className="w-6 h-6" />
           </button>
 
-          <div className="relative w-[90vw] h-[90vh] bg-black rounded-lg overflow-hidden">
+          <div className="relative w-[90vw] h-[90vh] bg-black rounded-lg overflow-hidden flex flex-col items-center justify-center gap-4">
             <video
               src={`/locations/layton/rooms/${roomId}/${roomId}.mp4`}
               controls
               autoPlay
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain mb-4"
             />
+            <iframe
+              src="https://planner5d.com/v?viewMode=3d&key=5fce2617f436dae6ffb3696c6d737cc7"
+              style={{ width: 190, height: 100, border: 'none' }}
+              allowFullScreen
+              title="3D Room Planner"
+            ></iframe>
           </div>
         </div>
       )}

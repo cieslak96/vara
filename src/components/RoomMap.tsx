@@ -28,7 +28,9 @@ export default function RoomMap({ filter }: Props) {
           <Link
             key={room.id}
             href={`/locations/layton/rooms/${room.id}`}
-            className={`absolute flex flex-col items-center justify-center text-xs text-black hover:scale-125 hover:z-30 ${room.color}`}
+className={`absolute flex flex-col items-center justify-center text-xs hover:scale-125 hover:z-30 ${
+  isAvailable ? 'bg-black text-white border border-white' : 'bg-white text-black'
+}`}
             style={{
               top: room.top,
               left: room.left,
@@ -37,39 +39,41 @@ export default function RoomMap({ filter }: Props) {
             }}
             title={`Room ${room.id}`}
           >
-            {!matchesFilter && <div className="absolute inset-0 bg-white/90 z-10" />}
+            {!matchesFilter && <div className="absolute inset-0 bg-white z-10" />}
 
-            <div className="absolute top-0 left-0 text-[8px] sm:text-[12px] px-1 py-0 sm:py-0.5 font-bold z-20">
+            <div className="absolute top-1 left-1 text-[10px] sm:text-[12px] px-1 py-0 sm:py-0.5 font-bold z-20">
               {room.id}
             </div>
 
-            {isAvailable && (
-              <div className="sm:hidden mt-1 text-[8px] font-semibold text-center z-10">
-                {room.name}
-              </div>
-            )}
+      
 
             <div className="hidden sm:flex flex-col items-center z-0">
               {isAvailable ? (
-                <div className="px-3 py-[6px] border border-gray-400 bg-white rounded-full shadow-md text-[11px] font-semibold">
+                <div className="px-[8px] py-[8px] md:py-[3px] md:px-[3px] border border-gray-400 bg-white rounded-full shadow-md text-[11px] md:text-[8px] font-semibold text-black">
                   Details
                 </div>
               ) : (
-                <Image
-                  src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
-                  alt={`Icon for ${room.id}`}
-                  width={35}
-                  height={35}
-                  className="rounded-full shadow-md ring-1 ring-gray-300"
-                />
+         <div className="hidden sm:block md:hidden lg:block">
+  <Image
+    src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
+    alt={`Icon for ${room.id}`}
+    width={35}
+    height={35}
+    className="rounded-full shadow-md ring-1 ring-gray-300"
+  />
+</div>
               )}
-              <span className="mt-1 font-semibold text-center leading-tight">
+              <span className="mt-1 font-semibold text-center md:text-[11px] leading-tight">
                 {room.name}
               </span>
-              <span className="text-gray-700 text-[11px] text-center">
-                {room.services}
-              </span>
-              <span className="text-gray-700 text-[11px] text-center">{room.phone}</span>
+           <span
+  className={`text-[11px] md:text-[9px] text-center ${
+    isAvailable ? 'text-white ' : 'text-gray-700'
+  }`}
+>
+  {room.services}
+</span>
+              <span className="text-gray-700 text-[11px] md:hidden  text-center ">{room.phone}</span>
             </div>
           </Link>
         )

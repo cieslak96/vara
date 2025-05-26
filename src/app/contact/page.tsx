@@ -1,12 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { useState} from 'react'
+import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Title from '@/components/Title'
 import LocationDropdown from '@/components/LocationDropdown'
-import SourceDropdown from '@/components/SourceDropdown'
+import ActionDropdown from '@/components/ActionDropdown'
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -21,7 +21,9 @@ export default function ContactPage() {
 
   const [statusMessage, setStatusMessage] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -33,9 +35,11 @@ export default function ContactPage() {
       body: JSON.stringify(form),
     })
     const data = await res.json()
-    setStatusMessage(data.success
-      ? ' Message sent! We’ll be in touch soon.'
-      : '❌ Something went wrong. Please try again later.')
+    setStatusMessage(
+      data.success
+        ? 'Message sent! We’ll be in touch soon.'
+        : '❌ Something went wrong. Please try again later.'
+    )
 
     setTimeout(() => setStatusMessage(''), 5000)
   }
@@ -45,14 +49,22 @@ export default function ContactPage() {
       <Header />
       <main className="pt-18">
         <Title title="Contact Us" />
-        <div className="flex flex-col lg:flex-row w-full min-h-screen">
-          {/* Left Image */}
-          <div className="w-full lg:w-1/4 relative h-64 lg:h-screen">
-            <Image src="/contact1.png" alt="Salon chair" fill className="object-cover" priority />
+
+        <div className="flex flex-col lg:flex-row w-full">
+
+          {/* Right image — goes to top on small devices */}
+          <div className="w-full lg:w-1/4 relative h-64 lg:h-auto ">
+            <Image
+              src="/contact2.png"
+              alt="Salon tools"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
 
           {/* Form Section */}
-          <div className="w-full lg:w-2/4 bg-[#f9f9f6] text-[#1e1e1e] px-6 lg:px-10 py-10 flex flex-col justify-start">
+          <div className="w-full lg:w-2/4 bg-white text-black px-6 lg:px-10 py-10 flex flex-col justify-start ">
             <p className="text-center text-sm mb-6">
               Fill out the contact form with your information, including the location you are interested in.
               We typically respond within a few hours.
@@ -65,7 +77,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   type="text"
                   placeholder="First Name"
-                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm"
                 />
                 <input
                   name="lastName"
@@ -73,7 +85,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   type="text"
                   placeholder="Last Name"
-                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm"
                 />
               </div>
               <div className="flex flex-col lg:flex-row gap-4">
@@ -83,7 +95,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   type="email"
                   placeholder="Email"
-                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm"
                 />
                 <input
                   name="phone"
@@ -91,7 +103,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   type="tel"
                   placeholder="Phone"
-                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+                  className="w-full lg:w-1/2 border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm"
                 />
               </div>
               <div className="flex flex-col lg:flex-row gap-4">
@@ -102,7 +114,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div className="w-full lg:w-1/2">
-                  <SourceDropdown
+                  <ActionDropdown
                     selected={form.source}
                     setSelected={(value) => setForm({ ...form, source: value })}
                   />
@@ -115,12 +127,12 @@ export default function ContactPage() {
                 rows={4}
                 maxLength={160}
                 placeholder="Tell us a little more"
-                className="w-full border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-black"
+                className="w-full border px-4 py-2 bg-neutral-50 border-gray-300 rounded-md shadow-sm"
               />
               <p className="text-sm text-gray-500 mt-1 text-right">
                 {form.message.length}/160
               </p>
-              <button type="submit" className="w-full bg-[#1c2b25] text-white py-2 font-semibold rounded-md">
+              <button type="submit" className="w-full bg-black text-white py-2 font-semibold rounded-md">
                 Submit
               </button>
             </form>
@@ -134,10 +146,17 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* Right Image */}
-          <div className="w-full lg:w-1/4 relative h-64 lg:h-screen">
-            <Image src="/contact2.png" alt="Salon tools" fill className="object-cover" priority />
+          {/* Left image — goes to bottom on small devices */}
+          <div className="w-full lg:w-1/4 aspect-[3/2] lg:aspect-auto relative ">
+            <Image
+              src="/contact1.png"
+              alt="Salon chair"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
+
         </div>
       </main>
       <Footer />

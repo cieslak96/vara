@@ -7,7 +7,7 @@ import SocialIcons from '@/components/SocialIcons'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1c2b25] text-white py-4 px-4">
+    <footer className="bg-black text-white py-4 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
 
         {/* Logo + Contact */}
@@ -27,42 +27,42 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Grouped navigation */}
-        <div className="md:col-span-3 flex gap-8 justify-end">
+{/* Grouped navigation */}
+<div className="md:col-span-3 flex gap-8 justify-end text-sm">
 
-          {/* Explore */}
-          <div className="space-y-1">
-            <h3 className="font-bold">Explore</h3>
-            <ul className="space-y-1 min-w-[70px]">
-              <Link href="/amenities" className="hover:font-bold">Amenities</Link>
-              <li><Link href="/about" className="hover:font-bold">About</Link></li>
-              <li><Link href="/contact" className="hover:font-bold">Contact</Link></li>
-              <li><Link href="/faq" className="hover:font-bold">FAQ</Link></li>
-              <li><Link href="/hero2" className="hover:font-bold">Alt Hero</Link></li>
-                 <li><Link href="/hero3" className="hover:font-bold">Alt Hero2</Link></li>
-            </ul>
-          </div>
+  {/* Explore */}
+  <div className="flex flex-col gap-1 items-start">
+    <h3 className="font-semibold text-sm mb-1">Explore</h3>
+    <ul className="flex flex-col gap-1">
+      <li><Link href="/amenities" className=" text-xs py-1 border-t border-b border-transparent hover:border-white transition-all duration-200">Amenities</Link></li>
+      <li><Link href="/about" className=" text-xs py-1 border-t border-b border-transparent hover:border-white transition-all duration-200">About</Link></li>
+      <li><Link href="/contact" className="text-xs  py-1 border-t border-b border-transparent hover:border-white transition-all duration-200">Contact</Link></li>
+      <li><Link href="/faq" className="text-xs py-1 border-t border-b border-transparent hover:border-white transition-all duration-200">FAQ</Link></li>
+    </ul>
 
-          {/* Legal */}
-          <div className="space-y-1 min-w-[110px]">
-            <h3 className="font-bold">Legal</h3>
-            <ul className="space-y-1">
-              <li><PrivacyModal /></li>
-              <li><TermsModal /></li>
-              <li><ContentModal /></li>
-            </ul>
-          </div>
+  </div>
 
-          {/* Join Us */}
-          <div className="space-y-1">
-            <h3 className="font-bold">Join Us</h3>
-            <Link href="/careers" className="hover:font-bold">Work With Us</Link>
-            <div className="flex space-x-2 ">
-              <SocialIcons />
-            </div>
-          </div>
+  {/* Legal */}
+  <div className="flex flex-col gap-1 items-start  ">
+    <h3 className="font-semibold text-sm mb-1">Legal</h3>
+    <ul className="flex flex-col gap-1">
+      <li className="border-t border-b border-transparent hover:border-white transition-all duration-200"><PrivacyModal /></li>
+      <li className="border-t border-b border-transparent hover:border-white transition-all duration-200"><TermsModal /></li>
+      <li className="border-t border-b border-transparent hover:border-white transition-all duration-200"><ContentModal /></li>
+    </ul>
+  </div>
 
-        </div>
+  {/* Join Us */}
+  <div className="flex flex-col gap-1 items-start">
+    <h3 className="font-semibold text-sm mb-1">Join Us</h3>
+    <Link href="/careers" className="py-0.5 border-t border-b text-xs border-transparent hover:border-white transition-all duration-200">Work With Us</Link>
+    <div className="flex space-x-2 mt-1">
+      <SocialIcons />
+    </div>
+  </div>
+
+</div>
+
 
       </div>
       <div className="mt-8 text-sm text-white flex justify-end">

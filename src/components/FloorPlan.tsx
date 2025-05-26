@@ -11,7 +11,7 @@ export default function FloorPlan() {
   const [filter, setFilter] = useState('')
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto space-y-10  lg:px-10">
       <ServiceFilter filter={filter} setFilter={setFilter} />
       <RoomMap filter={filter} />
       <MobileRoomList filter={filter} />

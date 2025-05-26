@@ -22,7 +22,9 @@ export default function MobileRoomList({ filter }: Props) {
             <Link
               href={`/locations/layton/rooms/${room.id}`}
               key={room.id}
-              className={`w-full flex items-center gap-3 rounded-md px-4 py-3 ${room.color}`}
+      className={`w-full flex items-center gap-3 rounded-md px-4 py-3 border ${
+  isAvailable ? 'bg-black text-white border-white' : 'border-black text-black'
+}`}
             >
               {!isAvailable && (
                 <Image
@@ -34,10 +36,12 @@ export default function MobileRoomList({ filter }: Props) {
                 />
               )}
               <div className="flex flex-col text-left text-xs leading-tight">
-                <span className="font-bold text-black">
+                <span className="font-bold">
                   #{room.id} {room.name}
                 </span>
-                <span className="text-gray-700 text-[11px]">{room.services}</span>
+                <span className={`text-[11px]${
+  isAvailable ? 'text-white ' : 'text-gray-700 '
+}`}>{room.services}</span>
                 <span className="text-gray-700 text-[11px]">{room.phone}</span>
               </div>
             </Link>

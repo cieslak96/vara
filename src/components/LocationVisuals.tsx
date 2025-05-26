@@ -32,9 +32,9 @@ export default function LaytonSection() {
   }
 
   return (
-    <section className="flex flex-col h-screen gap-y-4">
+    <section className="flex flex-col h-full gap-y-4">
       {/* Row 1: Facade */}
-      <div className="flex-1 relative w-full">
+<div className="aspect-[7/6] relative w-full">
         <Image
           src="/locations/layton/layton-facade.png"
           alt="Layton Facade"
@@ -45,7 +45,7 @@ export default function LaytonSection() {
 
       {/* Row 2: Gallery */}
       <div
-        className="flex-1 relative w-full cursor-pointer overflow-hidden"
+        className="aspect-[7/6] relative w-full cursor-pointer overflow-hidden"
         onClick={() => setIsFullscreen(true)}
       >
         <Image
@@ -76,7 +76,7 @@ export default function LaytonSection() {
 
       {/* Row 3: Video */}
       <div
-        className="flex-1 relative w-full cursor-pointer overflow-hidden"
+        className="aspect-[7/6] relative w-full cursor-pointer overflow-hidden"
         onClick={() => setIsVideoFullscreen(true)}
       >
         <video
@@ -98,7 +98,6 @@ export default function LaytonSection() {
           >
             <X className="w-6 h-6" />
           </button>
-
 
           <div className="relative max-w-[90vw] max-h-[90vh] bg-white w-full h-full flex items-center justify-center">
             <button
@@ -131,11 +130,10 @@ export default function LaytonSection() {
         <div className="fixed inset-0 bg-[#f9f9f6] bg-opacity-90 flex items-center justify-center z-50">
           <button
             className="absolute top-4 right-4 z-50 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
-         onClick={() => setIsVideoFullscreen(false)}
+            onClick={() => setIsVideoFullscreen(false)}
           >
             <X className="w-6 h-6" />
           </button>
-
 
           <div className="relative w-[90vw] h-[90vh] bg-black rounded-lg overflow-hidden">
             <video
