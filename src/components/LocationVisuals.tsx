@@ -45,7 +45,7 @@ export default function LaytonSection() {
 
       {/* Row 2: Gallery */}
       <div
-        className="aspect-[7/6] relative w-full cursor-pointer overflow-hidden"
+        className="aspect-[7/6] relative w-full cursor-pointer "
         onClick={() => setIsFullscreen(true)}
       >
         <Image
