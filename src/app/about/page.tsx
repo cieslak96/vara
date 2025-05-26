@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="pt-18">
+      <main >
         <Title title="About Us" />
 
         {/* Section 1 – Our Values */}
