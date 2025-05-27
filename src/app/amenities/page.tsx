@@ -104,7 +104,7 @@ export default function AmenitiesPage() {
     {/* MIDDLE CARD - CENTERED */}
     <div className="lg:w-1/3 lg:pl-20 flex ">
       <div className={`${blackstone.variable} bg-neutral-50 w-60 h-48 flex flex-col items-center justify-center text-center p-6 shadow-md space-y-2`}>
-        <p className="text-sm">
+        <p className="text-sm text-black">
           No likes, subscription, or re-posting necessary.
         </p>
         <p

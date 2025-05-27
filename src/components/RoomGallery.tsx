@@ -78,7 +78,7 @@ export default function RoomGallery({ roomId }: Props) {
                 e.stopPropagation()
                 next()
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text -black hover:bg-gray-200 rounded-full p-1 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-gray-200 rounded-full p-1 z-10"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
