@@ -104,7 +104,7 @@ export default function RoomVisuals({ roomId }: Props) {
 
       {/* Fullscreen Gallery */}
       {isFullscreen && (
-        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center ">
           <button
             className="absolute top-4 right-4 z-50 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
             onClick={() => setIsFullscreen(false)}
@@ -157,12 +157,7 @@ export default function RoomVisuals({ roomId }: Props) {
               autoPlay
               className="w-full h-full object-contain mb-4"
             />
-            <iframe
-              src="https://planner5d.com/v?viewMode=3d&key=5fce2617f436dae6ffb3696c6d737cc7"
-              style={{ width: 190, height: 100, border: 'none' }}
-              allowFullScreen
-              title="3D Room Planner"
-            ></iframe>
+       
           </div>
         </div>
       )}
