@@ -47,7 +47,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main >
+      <main className='pt-18'>
         <Title title="Contact Us" />
 
         <div className="flex flex-col lg:flex-row w-full">

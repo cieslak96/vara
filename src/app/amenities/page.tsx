@@ -29,7 +29,7 @@ export default function AmenitiesPage() {
   return (
     <>
       <Header />
-      <main >
+      <main className='pt-18'>
         <Title title="Our Amenities" />
 
 

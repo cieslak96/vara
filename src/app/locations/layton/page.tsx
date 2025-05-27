@@ -12,7 +12,7 @@ export default function TwoColumnPage() {
     <>
       <Header />
     
-      <main >
+      <main className='pt-18'>
         <Title title="Layton" />
 
 <div className="w-full flex flex-col lg:flex-row px-4 lg:px-0">

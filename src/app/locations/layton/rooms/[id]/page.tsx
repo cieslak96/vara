@@ -22,6 +22,7 @@ export default function RoomDetailPage() {
   return (
     <>
       <Header />
+      <main className="pt-18">
       <div >
         <Title title={`Suite ${room.id}`} />
       </div>
@@ -80,6 +81,7 @@ export default function RoomDetailPage() {
       </div>
 
       <Footer />
+      </main>
     </>
   )
 } 

@@ -9,7 +9,7 @@ export default function FAQPage() {
     return (
         <>
             <Header />
-            <main className=" bg-white relative z-0 overflow-hidden">
+            <main className=" bg-white relative z-0 overflow-hidden pt-18">
 
                 {/* White Title Section */}
                 <section className="bg-white text-center">
