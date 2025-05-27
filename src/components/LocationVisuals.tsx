@@ -34,7 +34,7 @@ export default function LaytonSection() {
   return (
     <section className="flex flex-col h-full gap-y-4">
       {/* Row 1: Facade */}
-      <div className="relative w-full h-[250px] sm:aspect-[7/6]">
+      <div className="relative w-full h-[300px] sm:aspect-[4/3]">
         <Image
           src="/locations/layton/layton-facade.png"
           alt="Layton Facade"
@@ -45,7 +45,7 @@ export default function LaytonSection() {
 
       {/* Row 2: Gallery */}
       <div
-        className="relative w-full h-[250px] sm:aspect-[7/6] cursor-pointer"
+        className="relative w-full h-[300px] sm:aspect-[4/3] cursor-pointer"
         onClick={() => setIsFullscreen(true)}
       >
         <Image
@@ -76,7 +76,7 @@ export default function LaytonSection() {
 
       {/* Row 3: Video */}
       <div
-        className="relative w-full h-[250px] sm:aspect-[7/6] cursor-pointer overflow-hidden"
+        className="relative w-full h-[300px] sm:aspect-[4/3] cursor-pointer overflow-hidden"
         onClick={() => setIsVideoFullscreen(true)}
       >
         <video
