@@ -10,19 +10,19 @@ export default function Header() {
 
   return (
     <>
-      {/* Backdrop Blur for Page — stays behind header */}
+      {/* Backdrop Blur for the page — stays behind header */}
       {isOpen && (
         <div
-          className=" fixed inset-0 backdrop-blur-sm z-20"
+          className="fixed inset-0 backdrop-blur-sm bg-white/30 z-20"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* Header — stays on top of backdrop */}
-      <header className=" top-0 left-0 w-full z-30 bg-white text-black">
+      {/* Header — stays above the backdrop */}
+      <header className="fixed top-0 left-0 w-full z-30 bg-white text-black shadow-md">
         <div className="flex items-center justify-between px-6 py-2 max-w-7xl mx-auto">
           {/* Logo */}
-          <Link href="/" className="hover:scale-105">
+          <Link href="/" className="hover:scale-105 transition-transform">
             <Image
               src="/logo-black.png"
               alt="Vara Salon Suites"
@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6 text-sm  ">
+          <nav className="hidden md:flex space-x-6 text-sm">
             <Link
               href="/amenities"
               className="px-2 pt-2 pb-2 border-t border-b border-transparent hover:border-black transition-all duration-200"
@@ -63,36 +63,37 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Animated Dropdown Menu — above everything */}
-      <div
-        className={`md:hidden fixed top-18 right-0 w-1/2 z-40 transition-all duration-300 ease-in-out transform
-          ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
-          origin-top-right bg-white px-4 py-4 space-y-2 shadow-lg rounded-bl-lg
-        `}
-        style={{ transformOrigin: 'top right' }}
-      >
-        <Link
-          href="/amenities"
-          className="block text-base text-black border-b border-black pb-2"
-          onClick={() => setIsOpen(false)}
-        >
-          Amenities
-        </Link>
-        <Link
-          href="/about"
-          className="block text-base text-black border-b border-black pb-2"
-          onClick={() => setIsOpen(false)}
-        >
-          About
-        </Link>
-        <Link
-          href="/contact"
-          className="block text-base text-black border-b border-black pb-2"
-          onClick={() => setIsOpen(false)}
-        >
-          Contact
-        </Link>
-      </div>
+     {/* Animated Mobile Dropdown Menu */}
+<div
+  className={`md:hidden fixed top-[60px] right-0 w-1/2 z-40 transition-all duration-300 ease-in-out transform
+    ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'}
+    origin-top-right bg-white px-4 py-4 space-y-2 shadow-lg rounded-bl-lg
+  `}
+  style={{ transformOrigin: 'top right' }}
+>
+  <Link
+    href="/amenities"
+    className="block text-base text-black border-t border-b border-black py-2"
+    onClick={() => setIsOpen(false)}
+  >
+    Amenities
+  </Link>
+  <Link
+    href="/about"
+    className="block text-base text-black border-b border-black pb-2"
+    onClick={() => setIsOpen(false)}
+  >
+    About
+  </Link>
+  <Link
+    href="/contact"
+    className="block text-base text-black border-b border-black pb-2"
+    onClick={() => setIsOpen(false)}
+  >
+    Contact
+  </Link>
+</div>
+
     </>
   )
 }

@@ -69,7 +69,7 @@ export default function RoomGallery({ roomId }: Props) {
                 e.stopPropagation()
                 prev()
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-1 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-gray-200 rounded-full p-1 z-10"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -78,7 +78,7 @@ export default function RoomGallery({ roomId }: Props) {
                 e.stopPropagation()
                 next()
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-1 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text -black hover:bg-gray-200 rounded-full p-1 z-10"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -98,7 +98,7 @@ export default function RoomGallery({ roomId }: Props) {
           <div className="relative max-w-[90vw] max-h-[90vh] bg-[#f9f9f6] w-full h-full flex items-center justify-center">
             <button
               onClick={prev}
-              className="absolute left-4 text-black bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
+              className="absolute left-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -115,7 +115,7 @@ export default function RoomGallery({ roomId }: Props) {
 
             <button
               onClick={next}
-              className="absolute right-4 text-black bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
+              className="absolute right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
