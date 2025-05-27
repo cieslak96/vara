@@ -69,7 +69,7 @@ export default function RoomGallery({ roomId }: Props) {
                 e.stopPropagation()
                 prev()
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-1 z-10"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -78,7 +78,7 @@ export default function RoomGallery({ roomId }: Props) {
                 e.stopPropagation()
                 next()
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-1 z-10"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -87,7 +87,7 @@ export default function RoomGallery({ roomId }: Props) {
       </div>
 
       {isFullscreen && (
-        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
           <button
             className="absolute top-4 right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-1 z-50"
             onClick={() => setIsFullscreen(false)}
