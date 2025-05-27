@@ -9,6 +9,8 @@ interface Props {
 }
 
 export default function RoomMap({ filter }: Props) {
+  const hasFilter = !!filter && filter.toLowerCase() !== 'all'
+
   return (
     <div className="relative">
       <Image
@@ -28,9 +30,9 @@ export default function RoomMap({ filter }: Props) {
           <Link
             key={room.id}
             href={`/locations/layton/rooms/${room.id}`}
-className={`absolute flex flex-col items-center justify-center text-xs hover:scale-125 hover:z-30 ${
-  isAvailable ? 'bg-black text-white border border-white' : 'bg-white text-black'
-}`}
+            className={`absolute flex flex-col items-center justify-center text-xs hover:scale-125 hover:z-30 ${
+              isAvailable ? 'bg-black text-white border border-white' : 'bg-white text-black'
+            }`}
             style={{
               top: room.top,
               left: room.left,
@@ -39,42 +41,59 @@ className={`absolute flex flex-col items-center justify-center text-xs hover:sca
             }}
             title={`Room ${room.id}`}
           >
+            {/* White overlay if not matching filter */}
             {!matchesFilter && <div className="absolute inset-0 bg-white z-10" />}
 
-            <div className="absolute top-1 left-1 text-[10px] sm:text-[12px] px-1 py-0 sm:py-0.5 font-bold z-20">
+            {/* Room ID (always visible) */}
+            <div className="absolute top-0.5 left-0.5  text-[10px] sm:text-[12px] px-1 py-0 sm:py-0.5 font-bold z-20">
               {room.id}
             </div>
 
-      
-
+            {/* Desktop: full details */}
             <div className="hidden sm:flex flex-col items-center z-0">
               {isAvailable ? (
                 <div className="px-[8px] py-[8px] md:py-[3px] md:px-[3px] border border-gray-400 bg-white rounded-full shadow-md text-[11px] md:text-[8px] font-semibold text-black">
                   Details
                 </div>
               ) : (
-         <div className="hidden sm:block md:hidden lg:block">
-  <Image
-    src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
-    alt={`Icon for ${room.id}`}
-    width={35}
-    height={35}
-    className="rounded-full shadow-md ring-1 ring-gray-300"
-  />
-</div>
+                <div className="hidden sm:block md:hidden lg:block">
+                  <Image
+                    src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
+                    alt={`Icon for ${room.id}`}
+                    width={35}
+                    height={35}
+                    className="rounded-full shadow-md ring-1 ring-gray-300"
+                  />
+                </div>
               )}
               <span className="mt-1 font-semibold text-center md:text-[11px] leading-tight">
                 {room.name}
               </span>
-           <span
-  className={`text-[11px] md:text-[9px] text-center ${
-    isAvailable ? 'text-white ' : 'text-gray-700'
-  }`}
->
-  {room.services}
-</span>
-              <span className="text-gray-700 text-[11px] md:hidden  text-center ">{room.phone}</span>
+              <span
+                className={`text-[11px] md:text-[9px] text-center ${
+                  isAvailable ? 'text-white ' : 'text-gray-700'
+                }`}
+              >
+                {room.services}
+              </span>
+              <span className="text-gray-700 text-[11px] md:hidden text-center">
+                {room.phone}
+              </span>
             </div>
+
+            {/* Mobile: logo only if filtered + not available */}
+        {hasFilter && matchesFilter && !isAvailable && (
+  <div className="sm:hidden absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center">
+    <Image
+      src={`/locations/layton/rooms/${room.id}/logo${room.id}.png`}
+      alt={`Icon for ${room.id}`}
+      width={20}
+      height={20}
+      className="rounded-full ring-1 ring-gray-300"
+    />
+  </div>
+)}
+
           </Link>
         )
       })}
