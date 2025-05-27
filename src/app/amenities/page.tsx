@@ -91,7 +91,7 @@ export default function AmenitiesPage() {
   <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
     
     {/* LEFT COLUMN */}
-    <div className="lg:w-1/3 text-left space-y-4">
+<div className="w-full lg:w-1/3 text-left space-y-4">
       <h2 className="text-3xl font-bold">Monthly Giveaways</h2>
       <p>
         As always, we will be doing giveaways for VARA tenants the first Wednesday of every month. We will randomly be selecting several tenants each week from across all our locations.
