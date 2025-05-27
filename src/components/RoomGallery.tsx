@@ -95,10 +95,10 @@ export default function RoomGallery({ roomId }: Props) {
             <X className="w-6 h-6" />
           </button>
 
-          <div className="relative max-w-[90vw] max-h-[90vh] bg-white w-full h-full flex items-center justify-center">
+          <div className="relative max-w-[90vw] max-h-[90vh] bg-[#f9f9f6] w-full h-full flex items-center justify-center">
             <button
               onClick={prev}
-              className="absolute left-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
+              className="absolute left-4 text-black bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -115,7 +115,7 @@ export default function RoomGallery({ roomId }: Props) {
 
             <button
               onClick={next}
-              className="absolute right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
+              className="absolute right-4 text-black bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronRight className="w-6 h-6" />
             </button>

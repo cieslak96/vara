@@ -73,21 +73,21 @@ export default function Header() {
       >
         <Link
           href="/amenities"
-          className="block text-base border-b border-black pb-2"
+          className="block text-base text-black border-b border-black pb-2"
           onClick={() => setIsOpen(false)}
         >
           Amenities
         </Link>
         <Link
           href="/about"
-          className="block text-base border-b border-black pb-2"
+          className="block text-base text-black border-b border-black pb-2"
           onClick={() => setIsOpen(false)}
         >
           About
         </Link>
         <Link
           href="/contact"
-          className="block text-base border-b border-black pb-2"
+          className="block text-base text-black border-b border-black pb-2"
           onClick={() => setIsOpen(false)}
         >
           Contact
