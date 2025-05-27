@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 interface Props {
   roomId: string
@@ -51,9 +50,9 @@ export default function RoomGallery({ roomId }: Props) {
   return (
     <>
       <div
-  className="relative h-full w-full cursor-pointer overflow-hidden rounded"
-  onClick={() => setIsFullscreen(true)}
->
+        className="relative h-full w-full cursor-pointer overflow-hidden rounded"
+        onClick={() => setIsFullscreen(true)}
+      >
         {galleryImages.length > 0 && (
           <Image
             src={galleryImages[currentIndex]}
@@ -63,39 +62,43 @@ export default function RoomGallery({ roomId }: Props) {
           />
         )}
 
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            prev()
-          }}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            next()
-          }}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
+        {!isFullscreen && (
+          <>
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                prev()
+              }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                next()
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 z-10"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </>
+        )}
       </div>
 
       {isFullscreen && (
-        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center ">
+        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center z-50">
           <button
-            className="absolute top-4 right-4  text-white bg-gray-300 hover:bg-gray-400 rounded-full p-1 z-10  "
+            className="absolute top-4 right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-1 z-50"
             onClick={() => setIsFullscreen(false)}
           >
-                  <X className="w-6 h-6" />
+            <X className="w-6 h-6" />
           </button>
 
           <div className="relative max-w-[90vw] max-h-[90vh] bg-white w-full h-full flex items-center justify-center">
             <button
               onClick={prev}
-              className="absolute left-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+              className="absolute left-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -112,7 +115,7 @@ export default function RoomGallery({ roomId }: Props) {
 
             <button
               onClick={next}
-              className="absolute right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+              className="absolute right-4 text-white bg-gray-300 hover:bg-gray-400 rounded-full p-2 z-20"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
