@@ -84,9 +84,9 @@ export default function RoomGallery({ roomId }: Props) {
       </div>
 
       {isFullscreen && (
-        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-[#f9f9f6]/90 flex items-center justify-center ">
           <button
-            className="absolute top-4 right-4  text-white bg-gray-300 hover:bg-gray-400 rounded-full p-1 z-10npm  "
+            className="absolute top-4 right-4  text-white bg-gray-300 hover:bg-gray-400 rounded-full p-1 z-10  "
             onClick={() => setIsFullscreen(false)}
           >
                   <X className="w-6 h-6" />
